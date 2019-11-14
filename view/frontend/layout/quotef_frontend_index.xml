@@ -1,0 +1,25 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd" layout="1column">
+    <head>
+        <css src="css/mycss.css" />
+    </head>
+    <body>
+
+        <referenceContainer name="content.top">
+            <block class="Vaimo\Quote\Block\Subscribe" name="form.popup.subscribe" as="form_popup_subscribe" before="-" template="popup-subscribe.phtml"/>
+        </referenceContainer>
+
+        <referenceContainer name="page.main.actions">
+            <block class="Magento\Framework\View\Element\Template" name="page.actions.toolbar" template="Magento_Backend::pageactions.phtml"/>
+        </referenceContainer>
+
+
+        <referenceContainer name="content">
+
+            <container name="quote_form_container" htmlTag="div" htmlClass="quote_form_container">
+                <uiComponent name="quote_form"/>
+            </container>
+
+
+        </referenceContainer>
+    </body>
+</page>

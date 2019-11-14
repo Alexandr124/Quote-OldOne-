@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="standard">
+        <route id="helloworld" frontName="helloworld">
+            <module name="Vaimo_Quote" />
+        </route>
+
+        <route id="quotef" frontName="quotef">
+            <module name="Vaimo_Quote" />
+        </route>
+
+        <route id="popuptest" frontName="popuptest">
+            <module name="PHPCuong_Newsletter"/>
+
+        </route>
+    </router>
+</config>

@@ -1,0 +1,35 @@
+<h1>Customer Details</h1>
+<?php $_loggedin = $this->helper('Magento\Checkout\Helper\Cart')->getCart()->getCustomerSession()->isLoggedIn(); ?>
+
+
+
+<?php
+
+
+$helper = $this->helper('Vaimo\Quote\Helper\Data');
+
+if ($helper->isLoggedIn()) {
+
+    $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+    $customerSession = $objectManager->create('Magento\Customer\Model\Session');
+    $datetemp = $objectManager->create('\Magento\Framework\Stdlib\DateTime\DateTime');
+
+    echo 'Customer Id: ' . $customerSession->getCustomer()->getId() . '<br/>';
+    echo 'Customer Full Name: ' . $customerSession->getCustomer()->getName() . '<br/>';
+    echo 'Customer Email: ' . $customerSession->getCustomer()->getEmail() . '<br/>';
+    echo 'Customer Group Id: ' . $customerSession->getCustomer()->getGroupId() . '<br/>';
+    echo 'Customer First Name: ' . $customerSession->getCustomer()->getFirstname() . '<br/>';
+    echo 'Customer Last Name: ' . $customerSession->getCustomer()->getLastname() . '<br/>';
+
+    var_dump($datetemp);
+
+}else
+    {
+        ?><p>Guest</p><?php
+    }
+
+$blockObj= $block->getLayout()->createBlock('Vaimo\Quote\Block\Subscribe');
+echo $blockObj->getFormActionUrl();
+
+?>
+

@@ -1,0 +1,20 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Vaimo_Quote::test"
+             title="Test"
+             translate="title"
+             module="Vaimo_Quote"
+             sortOrder="20"
+             dependsOnModule="Vaimo_Quote"
+             resource="Vaimo_Quote::test"/>
+
+        <add id="Test_UiGrid::test_quote"
+             title="Quote"
+             translate="title"
+             module="Vaimo_Quote"
+             sortOrder="10"
+             parent="Vaimo_Quote::test"
+             action="quote"
+             resource="Vaimo_Quote::test"/>
+    </menu>
+</config>
